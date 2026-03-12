@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physiq - Privacy Policy</title>
+    <title>GRINDX - Privacy Policy</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: linear-gradient(135deg, #0A0A0F 0%, #1a1a2e 50%, #0f0f1a 100%);
             color: #e0e0e0;
             min-height: 100vh;
             padding: 2rem 1rem;
@@ -18,14 +18,14 @@
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             border-radius: 20px;
             padding: 3rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
         h1 {
             font-size: 2rem;
-            background: linear-gradient(135deg, #7c5cfc, #a78bfa);
+            background: linear-gradient(135deg, #D4AF37, #F5D76E);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 0.5rem;
@@ -36,7 +36,7 @@
             font-size: 0.95rem;
         }
         h2 {
-            color: #a78bfa;
+            color: #D4AF37;
             font-size: 1.25rem;
             margin: 2rem 0 0.75rem;
         }
@@ -46,13 +46,13 @@
             margin-bottom: 0.5rem;
         }
         ul { padding-left: 1.5rem; margin-bottom: 1rem; }
-        a { color: #7c5cfc; text-decoration: none; }
+        a { color: #D4AF37; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .footer {
             text-align: center;
             margin-top: 2rem;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
             color: #666;
             font-size: 0.85rem;
         }
@@ -60,26 +60,34 @@
 </head>
 <body>
     <div class="container">
-        <h1>Physiq Privacy Policy</h1>
-        <p class="subtitle">Last updated: February 27, 2026</p>
+        <h1>GRINDX Privacy Policy</h1>
+        <p class="subtitle">Last updated: March 12, 2026</p>
 
         <h2>1. Introduction</h2>
-        <p>Physiq ("we", "our", "the app") is a body measurement tracking application. We respect your privacy and are committed to protecting your personal data. This policy explains what data we collect, how we use it, and your rights.</p>
+        <p>GRINDX ("we", "our", "the app") is a comprehensive fitness and nutrition tracking application. We respect your privacy and are committed to protecting your personal data. This policy explains what data we collect, how we use it, and your rights.</p>
 
         <h2>2. Data We Collect</h2>
         <ul>
             <li><strong>Account Information:</strong> When you sign in with Google or email/password, we receive your name, email address, and profile picture URL through Firebase Authentication.</li>
-            <li><strong>Body Measurements:</strong> Weight, chest, waist, hips, and other measurement data you voluntarily enter.</li>
+            <li><strong>Body Measurements:</strong> Weight, chest, waist, hips, body fat percentage, and other measurement data you voluntarily enter.</li>
             <li><strong>Profile Details:</strong> Height, age, gender, fitness goals, and unit preferences you provide.</li>
-            <li><strong>Progress Photos:</strong> Photos you choose to upload for tracking your fitness journey.</li>
+            <li><strong>Progress Photos:</strong> Photos you choose to upload for tracking your fitness journey, stored in Firebase Storage.</li>
+            <li><strong>Workout Data:</strong> Exercises, sets, reps, weight, RPE, workout history, personal records, and training programs you create or log.</li>
+            <li><strong>Nutrition Data:</strong> Food logs, calorie and macro tracking data, meal templates, favorite foods, nutrition goals, and food corrections you enter.</li>
+            <li><strong>Health Data (Optional):</strong> With your explicit permission, the app may read heart rate, active calories, and workout data from Apple HealthKit (iOS) or Health Connect (Android). This data is used only to display health metrics within the app and is not shared with third parties.</li>
+            <li><strong>Location Data (Optional):</strong> When you use the GPS cardio tracker, your device location is used to calculate route, distance, speed, and pace. Location data is stored only on your device and in your private Firestore account. It is not shared with third parties.</li>
+            <li><strong>Food Images:</strong> When you use the AI food scanner, nutrition label scanner, or food photo features, images are sent to Google Gemini AI for analysis. Images are processed in real-time and are not stored by us.</li>
             <li><strong>Microphone Audio:</strong> When you use the Voice Input feature, your speech is processed on-device to fill measurement forms. Audio is not recorded, stored, or transmitted to any external server.</li>
         </ul>
 
         <h2>3. How We Use Your Data</h2>
         <ul>
-            <li>To provide and maintain the app's core functionality (tracking measurements, generating charts, calculating body metrics).</li>
+            <li>To provide and maintain the app's core functionality (tracking measurements, workouts, nutrition, generating charts, calculating body metrics).</li>
             <li>To sync your data across devices via your authenticated account.</li>
-            <li>To generate personalized insights and progress summaries.</li>
+            <li>To generate personalized insights, progress summaries, and achievement badges.</li>
+            <li>To provide AI-powered nutrition estimates and meal suggestions using Google Gemini.</li>
+            <li>To look up food nutrition data from external databases (USDA, OpenFoodFacts, CalorieNinjas).</li>
+            <li>To send daily motivational notifications and measurement reminders you configure.</li>
         </ul>
 
         <h2>4. Data Storage & Security</h2>
@@ -90,34 +98,47 @@
         <ul>
             <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase (Google)</a> &mdash; Authentication, database, and file storage.</li>
             <li><a href="https://policies.google.com/privacy" target="_blank">Google Sign-In</a> &mdash; Account authentication.</li>
+            <li><a href="https://ai.google.dev/terms" target="_blank">Google Gemini AI</a> &mdash; AI-powered food recognition, nutrition estimation, nutrition label scanning, and meal suggestions. Food descriptions and images you submit are processed by Google's Gemini API. Your API key is stored locally on your device.</li>
+            <li><a href="https://world.openfoodfacts.org/terms-of-use" target="_blank">OpenFoodFacts</a> &mdash; Community food database for barcode lookups and packaged food search.</li>
+            <li><a href="https://fdc.nal.usda.gov/" target="_blank">USDA FoodData Central</a> &mdash; US government lab-verified nutrition database. Your USDA API key is stored locally on your device.</li>
+            <li><a href="https://calorieninjas.com/" target="_blank">CalorieNinjas</a> &mdash; Nutrition data cross-verification.</li>
         </ul>
 
         <h2>6. Permissions</h2>
         <ul>
             <li><strong>Microphone (RECORD_AUDIO):</strong> Used exclusively for the Voice Input feature to convert speech to text on-device. No audio is stored or sent externally.</li>
-            <li><strong>Camera / Photo Library:</strong> Used to capture or select progress photos and profile pictures.</li>
-            <li><strong>Internet:</strong> Required to sync data with Firebase and authenticate your account.</li>
-            <li><strong>Notifications:</strong> Used to send measurement reminder notifications you configure.</li>
+            <li><strong>Camera / Photo Library:</strong> Used to capture or select progress photos, profile pictures, food photos for AI estimation, and nutrition label photos for scanning.</li>
+            <li><strong>Location (GPS):</strong> Used only when you actively run the GPS cardio tracker. Location is not tracked in the background.</li>
+            <li><strong>Health Data (HealthKit / Health Connect):</strong> Used to read heart rate, active calories, and workout data after your explicit permission. The app reads but does not write health data.</li>
+            <li><strong>Internet:</strong> Required to sync data with Firebase, authenticate your account, and access food databases and AI services.</li>
+            <li><strong>Notifications:</strong> Used to send measurement reminders and daily motivational quotes you configure.</li>
         </ul>
 
-        <h2>7. Data Sharing</h2>
-        <p>We do not sell, trade, or share your personal data with any third parties. Your measurement data and photos are visible only to you.</p>
+        <h2>7. AI and Food Data Processing</h2>
+        <p>When you use AI-powered features (text-based food estimation, food photo scanning, nutrition label scanning, meal suggestions, food comparison), your input is sent to Google Gemini AI for processing. We do not store or log your AI queries. Google's use of this data is governed by their <a href="https://ai.google.dev/terms" target="_blank">Gemini API Terms of Service</a>.</p>
+        <p>Food corrections you make are stored in your private Firestore account and are used to improve accuracy for your future searches only. They are not shared with other users.</p>
 
-        <h2>8. Data Retention & Deletion</h2>
-        <p>Your data is retained as long as your account is active. You can delete individual measurements from within the app at any time. To request complete deletion of your account and all associated data, contact us at the email below.</p>
+        <h2>8. Embedded Data</h2>
+        <p>The app includes an embedded Indian food nutrition database (sourced from IFCT 2017 / NIN published data) that works offline. This data is bundled with the app and does not require any network requests.</p>
 
-        <h2>9. Children's Privacy</h2>
-        <p>Physiq is not intended for children under 13. We do not knowingly collect data from children under 13. If you believe a child has provided us data, please contact us and we will delete it promptly.</p>
+        <h2>9. Data Sharing</h2>
+        <p>We do not sell, trade, or share your personal data with any third parties. Your measurement data, workout logs, nutrition data, and photos are visible only to you. When you use the social sharing feature (e.g., sharing a workout summary), only the specific content you choose to share is exported.</p>
 
-        <h2>10. Changes to This Policy</h2>
+        <h2>10. Data Retention & Deletion</h2>
+        <p>Your data is retained as long as your account is active. You can delete individual measurements, workout logs, and food entries from within the app at any time. To request complete deletion of your account and all associated data, contact us at the email below.</p>
+
+        <h2>11. Children's Privacy</h2>
+        <p>GRINDX is not intended for children under 13. We do not knowingly collect data from children under 13. If you believe a child has provided us data, please contact us and we will delete it promptly.</p>
+
+        <h2>12. Changes to This Policy</h2>
         <p>We may update this policy from time to time. Changes will be reflected by the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
 
-        <h2>11. Contact Us</h2>
+        <h2>13. Contact Us</h2>
         <p>If you have questions about this privacy policy or your data, contact us at:</p>
         <p><a href="mailto:physiqapp.help@gmail.com">physiqapp.help@gmail.com</a></p>
 
         <div class="footer">
-            &copy; 2026 Physiq. All rights reserved.
+            &copy; 2026 GRINDX. All rights reserved.
         </div>
     </div>
 </body>
